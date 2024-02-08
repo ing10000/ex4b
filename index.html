@@ -31,9 +31,8 @@
 	</div>
 	<div id="result" style="margin-top:10px;margin-left:10px; font-size: 20px; color:red;">
 	</div>
-	
 	<script>
-	    //---------------------------
+
 		function validation(t){
 			if(isNaN(t)){
 					msg = "Please verify whether the temperature value is correct!!!";
@@ -46,9 +45,8 @@
 					return;
 			   }
 		}
+
 		
-		//---------------------------
- 
 		function conversion(t,u){
 			var t1 = parseFloat(t) ;
 			if(u == "F"){
@@ -62,10 +60,39 @@
 					u1 = "Kelvin";
 			   }
 			   return t1 ;
-			}
+		}
+
+		function rn(u){
+			var u1;
+			if(u == "F"){
+					u1 = "Fahrenheit";
+			   }else if(u == "K"){
+					u1 = "Réaumur";
+			   }else if(u == "R"){
+					u1 = "Kelvin";
+			   }
+			   return u1 ;
+		}
+		
+	    $(document).ready(function(){
+			$("button").click(function(){
+			   var t = $('#temp').val();
+			   var u = $('#unit').val();
+			   var chk = validation(t) ;
+			   if (chk != null) return ;
+
+		//	   
+
+			   var t1;
+			   var u1 = rn(u);
+			   var result = conversion(t,u) ;
+
 			   
-			   alert("Temperature is "+t1+" in "+u1);
-			
+			   alert("Temperature is "+result+" in "+u);
+			   document.getElementById("result").innerHTML = ("Temperature is "+t+" in "+ u1) ;
+
+			});
+		});
 	</script>
 </body>
 </html>
