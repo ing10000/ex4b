@@ -33,12 +33,9 @@
 	</div>
 	
 	<script>
-	    $(document).ready(function(){
-			$("button").click(function(){
-			   var t = $('#temp').val();//celsius
-			   var u = $('#unit').val();
-			   
-			   if(isNaN(t)){
+	    //---------------------------
+		function validation(t){
+			if(isNaN(t)){
 					msg = "Please verify whether the temperature value is correct!!!";
 					alert(msg);
 					return;
@@ -48,7 +45,10 @@
 					alert(msg);
 					return;
 			   }
-			   
+		}
+		
+		//---------------------------
+ 
 			   var t1;
 			   var u1;
 			   
@@ -64,8 +64,7 @@
 			   }
 			   
 			   alert("Temperature is "+t1+" in "+u1);
-			});
-		});
+			
 	</script>
 </body>
 </html>
