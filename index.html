@@ -49,10 +49,9 @@
 		
 		//---------------------------
  
-			   var t1;
-			   var u1;
-			   
-			   if(u == "F"){
+		function conversion(t,u){
+			var t1 = parseFloat(t) ;
+			if(u == "F"){
 					t1 = t * (9/5) + 32;
 					u1 = "Fahrenheit";
 			   }else if(u == "K"){
@@ -62,6 +61,8 @@
 					t1 = t * (4/5);
 					u1 = "Kelvin";
 			   }
+			   return t1 ;
+			}
 			   
 			   alert("Temperature is "+t1+" in "+u1);
 			
